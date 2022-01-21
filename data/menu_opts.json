@@ -28,8 +28,8 @@
         },
         {
             "ruta" : "inputs",
-            "icon" : "accessibility",
-            "texto": "Inputs de texto"
+            "icon" : "ad_units",
+            "texto": "Pantalla de inputs"
         }
     ]
 }

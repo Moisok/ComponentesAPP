@@ -48,11 +48,10 @@ class AlertPage extends StatelessWidget {
                 Text('Esto es un cuadro de alerta'),
                 Text('Probando el cuadro de alerta de Flutter'),
                 Icon(
-                  Icons.assignment_late_outlined ,
+                  Icons.assignment_late_outlined,
                   color: Colors.red,
                   size: 120,
                 ),
-                
               ],
             ),
           ),
