@@ -13,8 +13,8 @@ class _input_page extends State<input_page> {
   String nombre = 'Nombre';
   String nombre2 = ' ';
   String email = 'Email';
-  String fecha2 = ' ';
-  var fecha = TextEditingController();
+  dynamic fecha2 = ' ';
+  final _controller = TextEditingController();
   int letras = 0;
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class _input_page extends State<input_page> {
                 height: 10,
               ),
               TextField(
-                controller: fecha,
+                controller: _controller,
                 decoration: InputDecoration(
                   labelText: 'Fecha de nacimiento',
                   border: OutlineInputBorder(
@@ -104,11 +104,6 @@ class _input_page extends State<input_page> {
                   icon: Icon(Icons.calendar_today),
                 ),
                 onTap: () => {_selectDate(context)},
-                onChanged: (_value) => {
-                  setState(() {
-                    _value = fecha2;
-                  })
-                },
               ),
               SizedBox(
                 height: 10,
@@ -170,10 +165,14 @@ class _input_page extends State<input_page> {
       firstDate: DateTime(2010),
       lastDate: DateTime(2025),
     );
-    if (selected != null && selected != selectedDate)
+    /*if (selected != null && selected != selectedDate)
       setState(() {
-        selectedDate = selected;
-        fecha2 = selectedDate.toString();
+      });*/
+    if (selected != null) {
+      setState(() {
+        fecha2 = selected.toString();
+        _controller.text = fecha2;
       });
+    }
   }
 }
